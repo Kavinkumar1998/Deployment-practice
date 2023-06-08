@@ -29,7 +29,7 @@ res.status(200).json({message:"Loged In Sucessfully",Name,Email,Id,token})
 }
 catch(error){
     console.log(error)
-    res.status(500).json({message:"Internal server error"})
+    res.status(500).json({message:"Internal server error",error})
 }
 })
 
