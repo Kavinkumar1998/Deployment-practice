@@ -13,7 +13,7 @@ let items= await Cart.findOne({product:product});
 if(items){
     res.status(400).json({meassage:"Item Already Added to Cart"});
 }else{
-let cart = new Cart({product,quantity,user,craetedAt}).save();
+let cart = new Cart({product,quantity,user}).save();
 res.status(200).json({message:"Product Added successfully"});
     }}
     catch(error){
