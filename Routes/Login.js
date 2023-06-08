@@ -24,7 +24,7 @@ const token = generateAuthToken(user._id);
 const Name = user.Name;
 const Email = user.Email;
 const Id = user._id
-res.status(200).json({message:"Loged In Sucessfully",Name,Email,token})
+res.status(200).json({message:"Loged In Sucessfully",Name,Email,Id,token})
 }
 }
 catch(error){
