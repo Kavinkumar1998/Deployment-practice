@@ -37,9 +37,10 @@ res.status(200).json(allcart);
 
 router.delete("/removeFromCart/:id",async(req,res)=>{
     try{
+        const {id} = req.params;
       let item = await Cart.findByIdAndDelete({_id:id});
       if(!item){
-        res.status(400).json({message:"Internal Server Error"});
+        res.status(400).json({message:"Item is not available"});
       }
       else{
      res.status(200).json({message:"Item Removed Successfully"})
