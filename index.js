@@ -6,6 +6,7 @@ import { productRouter } from "./Routes/Product.js";
 import { signupRouter } from "./Routes/Signup.js";
 import { loginRouter } from "./Routes/Login.js";
 import { cartRouter } from "./Routes/Cart.js";
+import { OrderRouter } from "./Routes/Order.js";
 
 dotenv.config();
 DatabaseConnection();
@@ -25,5 +26,5 @@ app.use(cors());
  app.use("/",loginRouter);
  app.use("/",productRouter);
 app.use("/",cartRouter);
- 
+app.use("/",OrderRouter);
 app.listen(PORT,()=>console.log(`server started at ${PORT}`));
