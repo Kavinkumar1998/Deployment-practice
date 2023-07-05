@@ -37,7 +37,7 @@ router.get("/Orders",async(req,res)=>{
 
 //router for deleting order 
 
-router.delete("/cancel order/:id",async(req,res)=>{
+router.delete("/cancelOrder/:id",async(req,res)=>{
     try{
 const {id} = req.params;
 let order = await Order.findOneAndDelete({_id:id});
