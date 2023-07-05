@@ -26,7 +26,7 @@ if(orderItems){
 
 
 ///router getting order data
-router.get("Orders",async(req,res)=>{
+router.get("/Orders",async(req,res)=>{
     try{
 
         let allorders =  await Order.find();

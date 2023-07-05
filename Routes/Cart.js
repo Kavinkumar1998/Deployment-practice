@@ -18,7 +18,7 @@ res.status(200).json({message:"Product Added successfully"});
     }}
     catch(error){
         console.log(error);
-        res.status(500).json({message:"Internal Server Error",error})
+        res.status(500).json({message:"Internal Server Error"},error)
     }
 })
 
@@ -29,7 +29,7 @@ let allcart = await Cart.find();
 res.status(200).json(allcart);
     }catch(error){
         console.log(error);
-        res.status(500).json({message:"Internal Server Error"}) 
+        res.status(500).json({message:"Internal server Error"}) 
     }
 });
 
