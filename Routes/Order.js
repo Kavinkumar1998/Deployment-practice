@@ -8,14 +8,9 @@ const router = express.Router();
 router.post("/addorder",async(req,res)=>{
     try{
 const{orders,total,address}=req.body;
-let orderItems = await Order.findOne({orders:orders});
-
-if(orderItems){
-    res.status(400).json({message:"Orders Already Added"})
-}else{
     let newOrder = new Order({orders,total,address}).save();
-    res.status(200).json({message :"Orders Placed"})
-}
+    res.status(200).json({message :"Orders Placed"},newOrder)
+
     }catch(error){
         console.log(error);
         res.status(500).json({message:"Internal Server Error",error})
