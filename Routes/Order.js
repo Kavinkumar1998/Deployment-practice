@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/addorder",async(req,res)=>{
     try{
 const{orders,total,address}=req.body;
-let orderItems = await Order.finfdOne({orders:orders});
+let orderItems = await Order.findOne({orders:orders});
 
 if(orderItems){
     res.status(400).json({message:"Orders Already Added"})
