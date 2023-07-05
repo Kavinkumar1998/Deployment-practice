@@ -7,13 +7,13 @@ const router = express.Router();
 //router for addinng order
 router.post("/addorder",async(req,res)=>{
     try{
-const{order,total,address}=req.body;
-let orderItems = await Order.finfdOne({order:order});
+const{orders,total,address}=req.body;
+let orderItems = await Order.finfdOne({orders:orders});
 
 if(orderItems){
     res.status(400).json({message:"Orders Already Added"})
 }else{
-    let newOrder = new Order({order,total,address}).save();
+    let newOrder = new Order({orders,total,address}).save();
     res.status(200).json({message :"Orders Placed"})
 }
     }catch(error){
