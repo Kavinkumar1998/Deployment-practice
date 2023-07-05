@@ -9,7 +9,7 @@ router.post("/addorder",async(req,res)=>{
     try{
 const{orders,total,address}=req.body;
     let newOrder = new Order({orders,total,address}).save();
-    res.status(200).json({message :"Orders Placed"},newOrder)
+    res.status(200).json({message :"Orders Placed"})
 
     }catch(error){
         console.log(error);
