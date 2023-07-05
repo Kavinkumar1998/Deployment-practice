@@ -51,6 +51,17 @@ router.delete("/removeFromCart/:id",async(req,res)=>{
     }
 })
 
+//router for deleting all data 
+router.delete("/deleteAll",async(req,res)=>{
+try{
+    let item =  await Cart.deleteMany({});
+    res.status(200).json({ message: "All items removed successfully" });
+}catch(error){
+    console.log(error);
+    res.status(500).json({message:"Internal Server Error"})  
+}
+    
+})
 
 const cartRouter = router;
 export {cartRouter}
